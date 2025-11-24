@@ -45,6 +45,7 @@ function log(print, ctx, start, length, err, event) {
       : chalk.gray('-->');
 
   print(
+    ctx,
     '  ' +
       upstream +
       ' ' +
@@ -88,9 +89,9 @@ function koaLogger(options) {
     }
 
     // eslint-disable-next-line func-names
-    return function printFunc(...args) {
+    return function printFunc(ctx, ...args) {
       const string = util.format(...args);
-      if (transporter) transporter(string, args);
+      if (transporter) transporter(string, args, ctx);
       else console.log(...args);
     };
   })();
@@ -116,6 +117,7 @@ function koaLogger(options) {
     })();
 
     print(
+      ctx,
       '  ' +
         chalk.gray('<--') +
         ' ' +

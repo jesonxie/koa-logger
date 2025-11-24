@@ -44,7 +44,7 @@ const logger = require('koa-logger')
 const Koa = require('koa')
 
 const app = new Koa()
-app.use(logger((str, args) => {
+app.use(logger((str, args, ctx) => {
   // redirect koa logger to other output pipe
   // default is process.stdout(by console.log function)
 }))
@@ -52,7 +52,7 @@ app.use(logger((str, args) => {
 or
 ```js
 app.use(logger({
-  transporter: (str, args) => {
+  transporter: (str, args, ctx) => {
     // ...
   }
 }))
@@ -60,6 +60,7 @@ app.use(logger({
 
   Param `str` is output string with ANSI Color, and you can get pure text with other modules like `strip-ansi`  
   Param `args` is a array by `[format, method, url, status, time, length]`
+  Param `ctx` is the app context
 
 ## License
 
