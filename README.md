@@ -23,7 +23,7 @@
 ## Installation
 
 ```js
-$ npm install koa-logger
+$ npm i @jeson.xk/koa-logger
 ```
 
 ## Example
