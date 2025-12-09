@@ -29,7 +29,7 @@ $ npm i @jeson.xk/koa-logger
 ## Example
 
 ```js
-const logger = require('koa-logger')
+const logger = require('@jeson.xk/koa-logger')
 const Koa = require('koa')
 
 const app = new Koa()
@@ -44,7 +44,7 @@ app.use(logger())
 ## Use Custom Transporter
 
 ```js
-const logger = require('koa-logger')
+const logger = require('@jeson.xk/koa-logger')
 const Koa = require('koa')
 
 const app = new Koa()
